@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express();
-
+require('dotenv').config();
 app.get('/', (req, res) =>{
     res.send('hola mundo');
 });
-
-app.listen(3000)
+const PORT = process.env.PORT
+app.listen(3000, () => {
+    console.log(`escucha desde el puerto ${PORT}`)
+})
